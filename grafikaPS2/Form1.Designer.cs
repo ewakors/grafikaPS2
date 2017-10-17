@@ -37,20 +37,30 @@
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.colorPicker = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.redValue = new System.Windows.Forms.NumericUpDown();
             this.greenValue = new System.Windows.Forms.NumericUpDown();
             this.blueValue = new System.Windows.Forms.NumericUpDown();
             this.RedLabel = new System.Windows.Forms.Label();
             this.GreenLabel = new System.Windows.Forms.Label();
             this.BlueLabel = new System.Windows.Forms.Label();
             this.showBackColor = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cyanValue = new System.Windows.Forms.TextBox();
+            this.magentaValue = new System.Windows.Forms.TextBox();
+            this.yellowValue = new System.Windows.Forms.TextBox();
+            this.blackValue = new System.Windows.Forms.TextBox();
+            this.redValue = new System.Windows.Forms.NumericUpDown();
+            this.convert = new System.Windows.Forms.Button();
+            this.convertToCMYK = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.colorPicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.redValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.greenValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.showBackColor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redValue)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -124,18 +134,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             // 
-            // redValue
-            // 
-            this.redValue.Location = new System.Drawing.Point(597, 196);
-            this.redValue.Maximum = new decimal(new int[] {
-            255,
-            0,
-            0,
-            0});
-            this.redValue.Name = "redValue";
-            this.redValue.Size = new System.Drawing.Size(60, 20);
-            this.redValue.TabIndex = 2;
-            // 
             // greenValue
             // 
             this.greenValue.Location = new System.Drawing.Point(597, 222);
@@ -195,18 +193,125 @@
             this.showBackColor.TabIndex = 8;
             this.showBackColor.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(493, 283);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Cyan:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(493, 310);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Magenta:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(493, 336);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 13);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Yellow:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(493, 362);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Black:";
+            // 
+            // cyanValue
+            // 
+            this.cyanValue.Location = new System.Drawing.Point(555, 280);
+            this.cyanValue.Name = "cyanValue";
+            this.cyanValue.Size = new System.Drawing.Size(48, 20);
+            this.cyanValue.TabIndex = 18;
+            // 
+            // magentaValue
+            // 
+            this.magentaValue.Location = new System.Drawing.Point(555, 307);
+            this.magentaValue.Name = "magentaValue";
+            this.magentaValue.Size = new System.Drawing.Size(48, 20);
+            this.magentaValue.TabIndex = 19;
+            // 
+            // yellowValue
+            // 
+            this.yellowValue.Location = new System.Drawing.Point(555, 333);
+            this.yellowValue.Name = "yellowValue";
+            this.yellowValue.Size = new System.Drawing.Size(48, 20);
+            this.yellowValue.TabIndex = 20;
+            // 
+            // blackValue
+            // 
+            this.blackValue.Location = new System.Drawing.Point(555, 359);
+            this.blackValue.Name = "blackValue";
+            this.blackValue.Size = new System.Drawing.Size(48, 20);
+            this.blackValue.TabIndex = 21;
+            // 
+            // redValue
+            // 
+            this.redValue.Location = new System.Drawing.Point(597, 196);
+            this.redValue.Maximum = new decimal(new int[] {
+            255,
+            0,
+            0,
+            0});
+            this.redValue.Name = "redValue";
+            this.redValue.Size = new System.Drawing.Size(60, 20);
+            this.redValue.TabIndex = 22;
+            this.redValue.ValueChanged += new System.EventHandler(this.redValue_ValueChanged);
+            // 
+            // convert
+            // 
+            this.convert.Location = new System.Drawing.Point(496, 385);
+            this.convert.Name = "convert";
+            this.convert.Size = new System.Drawing.Size(107, 23);
+            this.convert.TabIndex = 23;
+            this.convert.Text = "Convert to RGB";
+            this.convert.UseVisualStyleBackColor = true;
+            this.convert.Click += new System.EventHandler(this.convert_Click);
+            // 
+            // convertToCMYK
+            // 
+            this.convertToCMYK.Location = new System.Drawing.Point(496, 414);
+            this.convertToCMYK.Name = "convertToCMYK";
+            this.convertToCMYK.Size = new System.Drawing.Size(107, 23);
+            this.convertToCMYK.TabIndex = 24;
+            this.convertToCMYK.Text = "Convert to CMYK";
+            this.convertToCMYK.UseVisualStyleBackColor = true;
+            this.convertToCMYK.Click += new System.EventHandler(this.convertToCMYK_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 456);
+            this.Controls.Add(this.convertToCMYK);
+            this.Controls.Add(this.convert);
+            this.Controls.Add(this.redValue);
+            this.Controls.Add(this.blackValue);
+            this.Controls.Add(this.yellowValue);
+            this.Controls.Add(this.magentaValue);
+            this.Controls.Add(this.cyanValue);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.showBackColor);
             this.Controls.Add(this.BlueLabel);
             this.Controls.Add(this.GreenLabel);
             this.Controls.Add(this.RedLabel);
             this.Controls.Add(this.blueValue);
             this.Controls.Add(this.greenValue);
-            this.Controls.Add(this.redValue);
             this.Controls.Add(this.colorPicker);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.menuStrip1);
@@ -217,10 +322,10 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.colorPicker)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.redValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.greenValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.showBackColor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redValue)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,13 +342,23 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox colorPicker;
-        private System.Windows.Forms.NumericUpDown redValue;
         private System.Windows.Forms.NumericUpDown greenValue;
         private System.Windows.Forms.NumericUpDown blueValue;
         private System.Windows.Forms.Label RedLabel;
         private System.Windows.Forms.Label GreenLabel;
         private System.Windows.Forms.Label BlueLabel;
         private System.Windows.Forms.PictureBox showBackColor;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox cyanValue;
+        private System.Windows.Forms.TextBox magentaValue;
+        private System.Windows.Forms.TextBox yellowValue;
+        private System.Windows.Forms.TextBox blackValue;
+        private System.Windows.Forms.NumericUpDown redValue;
+        private System.Windows.Forms.Button convert;
+        private System.Windows.Forms.Button convertToCMYK;
     }
 }
 
