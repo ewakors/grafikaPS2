@@ -24,17 +24,6 @@ namespace grafikaPS2
         public Form1()
         {
             InitializeComponent();
-
-            //var bitmap = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-            //for (var i = 0; i < pictureBox1.Width; i++)
-            //{
-            //    for (var j = 0; j < pictureBox1.Height; j++)
-            //    {
-            //        bitmap.SetPixel(i, j, Color.Red);
-            //    }
-            //}
-
-            //pictureBox1.Image = bitmap;
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -186,7 +175,6 @@ namespace grafikaPS2
             g = int.Parse(greenValue.Text);
             b = int.Parse(blueValue.Text);
 
-
             var bmp = pictureBox1.Image == null ? new Bitmap(pictureBox1.Width, pictureBox1.Height) : new Bitmap(pictureBox1.Image);
             for (int j = 0; j < pictureBox1.Width; j++)
             {
@@ -202,6 +190,77 @@ namespace grafikaPS2
             calculateToCMYK();
             pictureBox1.Image = bmp;
             showBackColor.Image = bmp;          
+        }
+
+        private void createRGBCube_Click(object sender, EventArgs e)
+        {
+            var bmp = pictureBox1.Image == null ? new Bitmap(pictureBox1.Width, pictureBox1.Height) : new Bitmap(pictureBox1.Image);
+
+            Graphics gc = Graphics.FromImage(bmp);
+            gc.DrawLine(Pens.Black, 0, 127, 255, 127); //gora przod
+            gc.DrawLine(Pens.Black, 127, 0, 382, 0); // gora tyl
+            gc.DrawLine(Pens.Black, 0, 127, 127, 0); // laczenie gora lewa
+            gc.DrawLine(Pens.Black, 255, 127, 382, 0); // laczenie gora prawa
+            gc.DrawLine(Pens.Black, 0, 382, 0, 127); // laczenie lewy bok przod
+            gc.DrawLine(Pens.Black, 0, 382, 255, 382); // laczenie dol		
+            gc.DrawLine(Pens.Black, 255, 127, 255, 382); // laczenie prawy bok przod
+            gc.DrawLine(Pens.Black, 382, 255, 382, 0); // laczenie prawy bok tyl
+            gc.DrawLine(Pens.Black, 255, 382, 382, 255); // laczenie dol prawy
+            pictureBox1.Image = bmp;
+
+            // rozowy
+            int R = 255, G = 1, B = 255;
+
+            // przedni
+            for (int j = 128; j < 382; j++)
+            {
+                for (int i = 1; i < 255; i++)
+                {
+                    // Draw the line with the wide green pen.
+                    bmp.SetPixel(i, j, Color.FromArgb(255, R, G, B));
+
+                    // Draw the line with the thin black pen.
+                    G++;
+                }
+                R--;
+                G = 1;
+            }
+            // czerwony
+            R = 255;
+            G = 1;
+            B = 1;
+            int x = 127;
+            // górny
+            for (int i = 1; i < 127; i++)
+            {
+                for (int j = 0; j < 254; j++)
+                {
+                    bmp.SetPixel(j + x, i, Color.FromArgb(255, R, G, B));
+                    G++;
+                }
+                B = B + 2;
+                G = 1;
+                x--;
+            }
+
+            // bialy
+            G = 255;
+            R = 255;
+            B = 255;
+            x = 127;
+            int x1 = 255;
+            // prawy
+            for (int i = 1; i < 127; i++)
+            {
+                for (int j = 0; j < 254; j++)
+                {
+                    bmp.SetPixel(i + x1, j + x, Color.FromArgb(255, R, G, B));
+                    R--;
+                }
+                x--;
+                B = B - 2;
+                R = 255;
+            }
         }
 
         private void tabControl_TabClosed(object sender, EventArgs e)

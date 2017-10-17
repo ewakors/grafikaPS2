@@ -54,6 +54,7 @@
             this.redValue = new System.Windows.Forms.NumericUpDown();
             this.convert = new System.Windows.Forms.Button();
             this.convertToCMYK = new System.Windows.Forms.Button();
+            this.createRGBCube = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.colorPicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -129,7 +130,7 @@
             // 
             this.pictureBox1.Location = new System.Drawing.Point(0, 27);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(484, 427);
+            this.pictureBox1.Size = new System.Drawing.Size(484, 439);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
@@ -290,11 +291,22 @@
             this.convertToCMYK.UseVisualStyleBackColor = true;
             this.convertToCMYK.Click += new System.EventHandler(this.convertToCMYK_Click);
             // 
+            // createRGBCube
+            // 
+            this.createRGBCube.Location = new System.Drawing.Point(496, 443);
+            this.createRGBCube.Name = "createRGBCube";
+            this.createRGBCube.Size = new System.Drawing.Size(107, 23);
+            this.createRGBCube.TabIndex = 25;
+            this.createRGBCube.Text = "Create RGB-Cube";
+            this.createRGBCube.UseVisualStyleBackColor = true;
+            this.createRGBCube.Click += new System.EventHandler(this.createRGBCube_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 456);
+            this.ClientSize = new System.Drawing.Size(657, 499);
+            this.Controls.Add(this.createRGBCube);
             this.Controls.Add(this.convertToCMYK);
             this.Controls.Add(this.convert);
             this.Controls.Add(this.redValue);
@@ -359,6 +371,7 @@
         private System.Windows.Forms.NumericUpDown redValue;
         private System.Windows.Forms.Button convert;
         private System.Windows.Forms.Button convertToCMYK;
+        private System.Windows.Forms.Button createRGBCube;
     }
 }
 
