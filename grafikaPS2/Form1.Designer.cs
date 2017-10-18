@@ -39,6 +39,7 @@
             this.brightnessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.additionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.subtractionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.multiplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.effectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.smoothingFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medianFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,7 +69,7 @@
             this.showBackColor = new System.Windows.Forms.PictureBox();
             this.colorPicker = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.multiplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.divisionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.greenValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueValue)).BeginInit();
@@ -130,7 +131,8 @@
             this.brightnessToolStripMenuItem,
             this.additionToolStripMenuItem,
             this.subtractionToolStripMenuItem,
-            this.multiplicationToolStripMenuItem});
+            this.multiplicationToolStripMenuItem,
+            this.divisionToolStripMenuItem});
             this.colorsToolStripMenuItem.Name = "colorsToolStripMenuItem";
             this.colorsToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.colorsToolStripMenuItem.Text = "Colors";
@@ -169,6 +171,13 @@
             this.subtractionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.subtractionToolStripMenuItem.Text = "Subtraction";
             this.subtractionToolStripMenuItem.Click += new System.EventHandler(this.subtractionToolStripMenuItem_Click);
+            // 
+            // multiplicationToolStripMenuItem
+            // 
+            this.multiplicationToolStripMenuItem.Name = "multiplicationToolStripMenuItem";
+            this.multiplicationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.multiplicationToolStripMenuItem.Text = "Multiplication";
+            this.multiplicationToolStripMenuItem.Click += new System.EventHandler(this.multiplicationToolStripMenuItem_Click);
             // 
             // effectsToolStripMenuItem
             // 
@@ -422,12 +431,12 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             // 
-            // multiplicationToolStripMenuItem
+            // divisionToolStripMenuItem
             // 
-            this.multiplicationToolStripMenuItem.Name = "multiplicationToolStripMenuItem";
-            this.multiplicationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.multiplicationToolStripMenuItem.Text = "Multiplication";
-            this.multiplicationToolStripMenuItem.Click += new System.EventHandler(this.multiplicationToolStripMenuItem_Click);
+            this.divisionToolStripMenuItem.Name = "divisionToolStripMenuItem";
+            this.divisionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.divisionToolStripMenuItem.Text = "Division";
+            this.divisionToolStripMenuItem.Click += new System.EventHandler(this.divisionToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -515,6 +524,7 @@
         private System.Windows.Forms.ToolStripMenuItem additionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem subtractionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem multiplicationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem divisionToolStripMenuItem;
     }
 }
 

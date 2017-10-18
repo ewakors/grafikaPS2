@@ -62,6 +62,12 @@
     <Compile Include="ClosableTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Division.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Division.Designer.cs">
+      <DependentUpon>Division.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Brightness.resx">
       <DependentUpon>Brightness.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Division.resx">
+      <DependentUpon>Division.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

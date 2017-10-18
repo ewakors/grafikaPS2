@@ -404,20 +404,29 @@ namespace grafikaPS2
             brightness.ShowDialog();
 
         }
+
         private void additionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Addition addition = new Addition(this);
             addition.ShowDialog();
         }
+
         private void subtractionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Subtraction subtration = new Subtraction(this);
             subtration.ShowDialog();
         }
+
         private void multiplicationToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Multiplication multi = new Multiplication(this);
             multi.ShowDialog();
+        }
+
+        private void divisionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Division division = new Division(this);
+            division.ShowDialog();
         }
         #endregion
 
