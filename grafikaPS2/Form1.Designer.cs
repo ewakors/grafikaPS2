@@ -33,6 +33,11 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.effectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.smoothingFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.medianFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.sobelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.colorPicker = new System.Windows.Forms.PictureBox();
@@ -55,10 +60,7 @@
             this.convert = new System.Windows.Forms.Button();
             this.convertToCMYK = new System.Windows.Forms.Button();
             this.createRGBCube = new System.Windows.Forms.Button();
-            this.colorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.effectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.smoothingFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.medianFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.highpassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.colorPicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,7 +95,7 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -101,16 +103,54 @@
             // 
             this.saveAsToolStripMenuItem.Enabled = false;
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.saveAsToolStripMenuItem.Text = "Save as...";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // colorsToolStripMenuItem
+            // 
+            this.colorsToolStripMenuItem.Name = "colorsToolStripMenuItem";
+            this.colorsToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.colorsToolStripMenuItem.Text = "Colors";
+            // 
+            // effectsToolStripMenuItem
+            // 
+            this.effectsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.smoothingFilterToolStripMenuItem,
+            this.medianFilterToolStripMenuItem,
+            this.sobelToolStripMenuItem,
+            this.highpassToolStripMenuItem});
+            this.effectsToolStripMenuItem.Name = "effectsToolStripMenuItem";
+            this.effectsToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.effectsToolStripMenuItem.Text = "Filters";
+            // 
+            // smoothingFilterToolStripMenuItem
+            // 
+            this.smoothingFilterToolStripMenuItem.Name = "smoothingFilterToolStripMenuItem";
+            this.smoothingFilterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.smoothingFilterToolStripMenuItem.Text = "Smoothing";
+            this.smoothingFilterToolStripMenuItem.Click += new System.EventHandler(this.smoothingFilterToolStripMenuItem_Click);
+            // 
+            // medianFilterToolStripMenuItem
+            // 
+            this.medianFilterToolStripMenuItem.Name = "medianFilterToolStripMenuItem";
+            this.medianFilterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.medianFilterToolStripMenuItem.Text = "Median";
+            this.medianFilterToolStripMenuItem.Click += new System.EventHandler(this.medianFilterToolStripMenuItem_Click);
+            // 
+            // sobelToolStripMenuItem
+            // 
+            this.sobelToolStripMenuItem.Name = "sobelToolStripMenuItem";
+            this.sobelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sobelToolStripMenuItem.Text = "Sobel";
+            this.sobelToolStripMenuItem.Click += new System.EventHandler(this.sobelToolStripMenuItem_Click);
             // 
             // openFileDialog
             // 
@@ -307,34 +347,12 @@
             this.createRGBCube.UseVisualStyleBackColor = true;
             this.createRGBCube.Click += new System.EventHandler(this.createRGBCube_Click);
             // 
-            // colorsToolStripMenuItem
+            // highpassToolStripMenuItem
             // 
-            this.colorsToolStripMenuItem.Name = "colorsToolStripMenuItem";
-            this.colorsToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
-            this.colorsToolStripMenuItem.Text = "Colors";
-            // 
-            // effectsToolStripMenuItem
-            // 
-            this.effectsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.smoothingFilterToolStripMenuItem,
-            this.medianFilterToolStripMenuItem});
-            this.effectsToolStripMenuItem.Name = "effectsToolStripMenuItem";
-            this.effectsToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.effectsToolStripMenuItem.Text = "Filters";
-            // 
-            // smoothingFilterToolStripMenuItem
-            // 
-            this.smoothingFilterToolStripMenuItem.Name = "smoothingFilterToolStripMenuItem";
-            this.smoothingFilterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.smoothingFilterToolStripMenuItem.Text = "Smoothing";
-            this.smoothingFilterToolStripMenuItem.Click += new System.EventHandler(this.smoothingFilterToolStripMenuItem_Click);
-            // 
-            // medianFilterToolStripMenuItem
-            // 
-            this.medianFilterToolStripMenuItem.Name = "medianFilterToolStripMenuItem";
-            this.medianFilterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.medianFilterToolStripMenuItem.Text = "Median";
-            this.medianFilterToolStripMenuItem.Click += new System.EventHandler(this.medianFilterToolStripMenuItem_Click);
+            this.highpassToolStripMenuItem.Name = "highpassToolStripMenuItem";
+            this.highpassToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.highpassToolStripMenuItem.Text = "High-pass";
+            this.highpassToolStripMenuItem.Click += new System.EventHandler(this.highpassToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -411,6 +429,8 @@
         private System.Windows.Forms.ToolStripMenuItem effectsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem smoothingFilterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem medianFilterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem sobelToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem highpassToolStripMenuItem;
     }
 }
 

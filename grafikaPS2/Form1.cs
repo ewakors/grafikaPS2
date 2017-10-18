@@ -361,6 +361,7 @@ namespace grafikaPS2
         }
 
         int smoothingFilterSize = 3;
+        int gaussFilterSize = 3;
         private int Size = 3;
         int[,] red, green, blue, gray;
         private int Norm;
@@ -370,10 +371,27 @@ namespace grafikaPS2
         int[] smoothingFilter = {1, 1, 1,
                                  1, 1, 1,
                                  1, 1, 1};
-        int GAUSS_SIZE = 3;
-        int[] GAUSS = {1, 2, 1,
-                       2, 4, 2,
-                       1, 2, 1};
+        int[] sobelFilter = { 1,  2,  1,
+                              0,  0,  0,
+                             -1, -2, -1};
+        int[] highPassFilter = { 0, -1,  0,
+                                -1,  20, -1,
+                                 0, -1,  0};
+        int[] gaussFilter = {1, 2, 1,
+                             2, 4, 2,
+                             1, 2, 1};
+
+        private void highpassToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LinearFiltr(highPassFilter);
+            LinearFiltr(highPassFilter);
+        }
+
+        private void sobelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LinearFiltr(sobelFilter);
+            LinearFiltr(sobelFilter);
+        }
 
         enum Filters { Smoothing, Median, Sobel, Gurnoprzepustowywyostrzajacy, Gauss, SplotMaski }
 
