@@ -55,6 +55,9 @@
             this.convert = new System.Windows.Forms.Button();
             this.convertToCMYK = new System.Windows.Forms.Button();
             this.createRGBCube = new System.Windows.Forms.Button();
+            this.colorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.effectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.smoothingFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.colorPicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,10 +70,12 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem1});
+            this.fileToolStripMenuItem1,
+            this.colorsToolStripMenuItem,
+            this.effectsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(657, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(931, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -87,7 +92,7 @@
             // openToolStripMenuItem
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.openToolStripMenuItem.Text = "Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
@@ -95,14 +100,14 @@
             // 
             this.saveAsToolStripMenuItem.Enabled = false;
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveAsToolStripMenuItem.Text = "Save as...";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -117,7 +122,7 @@
             // colorPicker
             // 
             this.colorPicker.Image = global::grafikaPS2.Properties.Resources.color_wheel_260x2601;
-            this.colorPicker.Location = new System.Drawing.Point(490, 27);
+            this.colorPicker.Location = new System.Drawing.Point(752, 47);
             this.colorPicker.Name = "colorPicker";
             this.colorPicker.Size = new System.Drawing.Size(167, 163);
             this.colorPicker.TabIndex = 1;
@@ -128,16 +133,16 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(0, 27);
+            this.pictureBox1.Location = new System.Drawing.Point(12, 47);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(484, 439);
+            this.pictureBox1.Size = new System.Drawing.Size(734, 439);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             // 
             // greenValue
             // 
-            this.greenValue.Location = new System.Drawing.Point(597, 222);
+            this.greenValue.Location = new System.Drawing.Point(859, 242);
             this.greenValue.Maximum = new decimal(new int[] {
             255,
             0,
@@ -149,7 +154,7 @@
             // 
             // blueValue
             // 
-            this.blueValue.Location = new System.Drawing.Point(597, 249);
+            this.blueValue.Location = new System.Drawing.Point(859, 269);
             this.blueValue.Maximum = new decimal(new int[] {
             255,
             0,
@@ -162,7 +167,7 @@
             // RedLabel
             // 
             this.RedLabel.AutoSize = true;
-            this.RedLabel.Location = new System.Drawing.Point(552, 198);
+            this.RedLabel.Location = new System.Drawing.Point(814, 218);
             this.RedLabel.Name = "RedLabel";
             this.RedLabel.Size = new System.Drawing.Size(30, 13);
             this.RedLabel.TabIndex = 5;
@@ -171,7 +176,7 @@
             // GreenLabel
             // 
             this.GreenLabel.AutoSize = true;
-            this.GreenLabel.Location = new System.Drawing.Point(552, 224);
+            this.GreenLabel.Location = new System.Drawing.Point(814, 244);
             this.GreenLabel.Name = "GreenLabel";
             this.GreenLabel.Size = new System.Drawing.Size(39, 13);
             this.GreenLabel.TabIndex = 6;
@@ -180,7 +185,7 @@
             // BlueLabel
             // 
             this.BlueLabel.AutoSize = true;
-            this.BlueLabel.Location = new System.Drawing.Point(552, 251);
+            this.BlueLabel.Location = new System.Drawing.Point(814, 271);
             this.BlueLabel.Name = "BlueLabel";
             this.BlueLabel.Size = new System.Drawing.Size(31, 13);
             this.BlueLabel.TabIndex = 7;
@@ -188,7 +193,7 @@
             // 
             // showBackColor
             // 
-            this.showBackColor.Location = new System.Drawing.Point(490, 198);
+            this.showBackColor.Location = new System.Drawing.Point(752, 218);
             this.showBackColor.Name = "showBackColor";
             this.showBackColor.Size = new System.Drawing.Size(54, 66);
             this.showBackColor.TabIndex = 8;
@@ -197,7 +202,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(493, 283);
+            this.label1.Location = new System.Drawing.Point(755, 303);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 13);
             this.label1.TabIndex = 9;
@@ -206,7 +211,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(493, 310);
+            this.label2.Location = new System.Drawing.Point(755, 330);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(52, 13);
             this.label2.TabIndex = 15;
@@ -215,7 +220,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(493, 336);
+            this.label3.Location = new System.Drawing.Point(755, 356);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 16;
@@ -224,7 +229,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(493, 362);
+            this.label4.Location = new System.Drawing.Point(755, 382);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 17;
@@ -232,35 +237,35 @@
             // 
             // cyanValue
             // 
-            this.cyanValue.Location = new System.Drawing.Point(555, 280);
+            this.cyanValue.Location = new System.Drawing.Point(817, 300);
             this.cyanValue.Name = "cyanValue";
             this.cyanValue.Size = new System.Drawing.Size(48, 20);
             this.cyanValue.TabIndex = 18;
             // 
             // magentaValue
             // 
-            this.magentaValue.Location = new System.Drawing.Point(555, 307);
+            this.magentaValue.Location = new System.Drawing.Point(817, 327);
             this.magentaValue.Name = "magentaValue";
             this.magentaValue.Size = new System.Drawing.Size(48, 20);
             this.magentaValue.TabIndex = 19;
             // 
             // yellowValue
             // 
-            this.yellowValue.Location = new System.Drawing.Point(555, 333);
+            this.yellowValue.Location = new System.Drawing.Point(817, 353);
             this.yellowValue.Name = "yellowValue";
             this.yellowValue.Size = new System.Drawing.Size(48, 20);
             this.yellowValue.TabIndex = 20;
             // 
             // blackValue
             // 
-            this.blackValue.Location = new System.Drawing.Point(555, 359);
+            this.blackValue.Location = new System.Drawing.Point(817, 379);
             this.blackValue.Name = "blackValue";
             this.blackValue.Size = new System.Drawing.Size(48, 20);
             this.blackValue.TabIndex = 21;
             // 
             // redValue
             // 
-            this.redValue.Location = new System.Drawing.Point(597, 196);
+            this.redValue.Location = new System.Drawing.Point(859, 216);
             this.redValue.Maximum = new decimal(new int[] {
             255,
             0,
@@ -273,7 +278,7 @@
             // 
             // convert
             // 
-            this.convert.Location = new System.Drawing.Point(496, 385);
+            this.convert.Location = new System.Drawing.Point(758, 405);
             this.convert.Name = "convert";
             this.convert.Size = new System.Drawing.Size(107, 23);
             this.convert.TabIndex = 23;
@@ -283,7 +288,7 @@
             // 
             // convertToCMYK
             // 
-            this.convertToCMYK.Location = new System.Drawing.Point(496, 414);
+            this.convertToCMYK.Location = new System.Drawing.Point(758, 434);
             this.convertToCMYK.Name = "convertToCMYK";
             this.convertToCMYK.Size = new System.Drawing.Size(107, 23);
             this.convertToCMYK.TabIndex = 24;
@@ -293,7 +298,7 @@
             // 
             // createRGBCube
             // 
-            this.createRGBCube.Location = new System.Drawing.Point(496, 443);
+            this.createRGBCube.Location = new System.Drawing.Point(758, 463);
             this.createRGBCube.Name = "createRGBCube";
             this.createRGBCube.Size = new System.Drawing.Size(107, 23);
             this.createRGBCube.TabIndex = 25;
@@ -301,11 +306,32 @@
             this.createRGBCube.UseVisualStyleBackColor = true;
             this.createRGBCube.Click += new System.EventHandler(this.createRGBCube_Click);
             // 
+            // colorsToolStripMenuItem
+            // 
+            this.colorsToolStripMenuItem.Name = "colorsToolStripMenuItem";
+            this.colorsToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
+            this.colorsToolStripMenuItem.Text = "Colors";
+            // 
+            // effectsToolStripMenuItem
+            // 
+            this.effectsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.smoothingFilterToolStripMenuItem});
+            this.effectsToolStripMenuItem.Name = "effectsToolStripMenuItem";
+            this.effectsToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
+            this.effectsToolStripMenuItem.Text = "Filters";
+            // 
+            // smoothingFilterToolStripMenuItem
+            // 
+            this.smoothingFilterToolStripMenuItem.Name = "smoothingFilterToolStripMenuItem";
+            this.smoothingFilterToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
+            this.smoothingFilterToolStripMenuItem.Text = "Smoothing filter";
+            this.smoothingFilterToolStripMenuItem.Click += new System.EventHandler(this.smoothingFilterToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 499);
+            this.ClientSize = new System.Drawing.Size(931, 499);
             this.Controls.Add(this.createRGBCube);
             this.Controls.Add(this.convertToCMYK);
             this.Controls.Add(this.convert);
@@ -372,6 +398,9 @@
         private System.Windows.Forms.Button convert;
         private System.Windows.Forms.Button convertToCMYK;
         private System.Windows.Forms.Button createRGBCube;
+        private System.Windows.Forms.ToolStripMenuItem colorsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem effectsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem smoothingFilterToolStripMenuItem;
     }
 }
 

@@ -12,7 +12,7 @@ namespace grafikaPS2
         private Image image;
         private int r = 0, g = 0, b = 0, c = 0, m = 0, y = 0, k = 100;
         bool ChooseState = false;
-        Bitmap color_bmp;
+        private Bitmap color_bmp;
         Color pointColor;
 
         public Form1(string path)
@@ -78,38 +78,28 @@ namespace grafikaPS2
 
         private async void LoadImage(string path)
         {
-            //string filename = Path.GetFileName(path);
-            //string extension = Path.GetExtension(path);
+            string filename = Path.GetFileName(path);
+            string extension = Path.GetExtension(path);
 
-            //PictureBox pictureBox = new PictureBox(filename);
-            
-            //PictureTabPage tab = new PictureTabPage(filename);
-            //tabControl.TabPages.Add(tab);
-            //tabControl.SelectedTab = tab;
-            //tab.Cursor = Cursors.WaitCursor;
+            try
+            {
+                if (extension == ".pbm" || extension == ".pgm" || extension == ".ppm")
+                {
+                    pictureBox1.Image = await Anymap.LoadAsync(path);
+                    color_bmp = (Bitmap)pictureBox1.Image;
+                }
+                else
+                {
+                    pictureBox1.Image = Image.FromFile(path);
+                    color_bmp = (Bitmap)pictureBox1.Image;
+                }
 
-            //try
-            //{
-            //    Image image;
-            //    if (extension == ".pbm" || extension == ".pgm" || extension == ".ppm")
-            //    {
-            //        image = await Anymap.LoadAsync(path);
-            //    }
-            //    else
-            //    {
-            //        image = Image.FromFile(path);
-            //    }
-
-            //    tab.Image = image;
-            //    saveAsToolStripMenuItem.Enabled = true;
-            //}
-            //catch (Exception ex)
-            //{
-            //    tabControl.TabPages.Remove(tab);
-            //    MessageBox.Show(string.Format("Error loading {0}!", path), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
-
-            //tab.Cursor = Cursors.Default;
+                saveAsToolStripMenuItem.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(string.Format("Error loading {0}!", path), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void redValue_ValueChanged(object sender, EventArgs e)
@@ -353,5 +343,118 @@ namespace grafikaPS2
             yellowValue.Text = y.ToString();
             blackValue.Text = k.ToString();
         }
+
+        #region Filters
+
+        int smoothingFilterSize = 3;
+        private int Size = 3;
+        int[,] red, green, blue, gray;
+
+        private void smoothingFilterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LinearFiltr(smoothingFilter);
+            LinearFiltr(smoothingFilter);
+        }
+
+        private int Norm;
+        private Filters currentFilter;
+
+
+        int[] smoothingFilter = {1, 1, 1,
+                                 1, 1, 1,
+                                 1, 1, 1};
+        int GAUSS_SIZE = 3;
+        int[] GAUSS = {1, 2, 1,
+                       2, 4, 2,
+                       1, 2, 1};
+
+        enum Filters { Smoothing, Medianowy, Sobel, Gurnoprzepustowywyostrzajacy, Gauss, SplotMaski }
+
+        private void SetFilter(Filters f)
+        {
+            currentFilter = f;
+        }
+
+        void setRGBG()
+        {
+            red = new int[color_bmp.Width + 1, color_bmp.Height + 1];
+            green = new int[color_bmp.Width + 1, color_bmp.Height + 1];
+            blue = new int[color_bmp.Width + 1, color_bmp.Height + 1];
+            gray = new int[color_bmp.Width + 1, color_bmp.Height + 1];
+
+            for (var i = 0; i < color_bmp.Width; i++)
+            {
+                for (var j = 0; j < color_bmp.Height; j++)
+                {
+                    //int numer = int.Parse(textBox4.Text);
+                    Color pixel = color_bmp.GetPixel(i, j);
+                    //    int a, r, g, b;
+                    red[i, j] = pixel.R;
+                    green[i, j] = pixel.G;
+                    blue[i, j] = pixel.B;
+                }
+            }
+        }
+
+        private void LinearFiltr(int[] Filter)
+        {
+            setRGBG();
+            int rsume, gsume, bsume, graysume;
+            var ee = color_bmp;
+            int margin = ((Size - 1) / 2);
+            Norm = 0;
+
+            for (int i = 0; i < 3; i++)
+                for (int j = 0; j < 3; j++)
+                    Norm += Filter[i + 3 * j];
+
+            if (Norm == 0) Norm = 1;
+            //filtr dla obrazu kolorowego
+            for (int i = margin; i < ee.Width; i++)
+                for (int j = margin; j < ee.Height; j++)
+                {
+                    rsume = 0;
+                    gsume = 0;
+                    bsume = 0;
+                    for (int k = 0; k < Size; k++)
+                        for (int l = 0; l < Size; l++)
+                        {
+                            rsume += Filter[k * Size + l] * red[i + k - margin, j + l - margin];
+                            gsume += Filter[k * Size + l] * green[i + k - margin, j + l - margin];
+                            bsume += Filter[k * Size + l] * blue[i + k - margin, j + l - margin];
+                        }
+                    rsume /= Norm;
+                    gsume /= Norm;
+                    bsume /= Norm;
+
+                    if (rsume > 255) rsume = 255;
+                    else if (rsume < 0) rsume = 0;
+                    if (gsume > 255) gsume = 255;
+                    else if (gsume < 0) gsume = 0;
+                    if (bsume > 255) bsume = 255;
+                    else if (bsume < 0) bsume = 0;
+
+                    ee.SetPixel(i, j, Color.FromArgb(rsume + (gsume << 8) + (bsume << 16)));
+                }
+            color_bmp = ee;
+
+            for (var i = 0; i < ee.Width; i++)
+            {
+                for (var j = 0; j < ee.Height; j++)
+                {
+                    Color pixel = ee.GetPixel(i, j);
+                    int a, r, g, b;
+
+                    r = pixel.R;
+                    g = pixel.G;
+                    b = pixel.B;
+
+                    ee.SetPixel(i, j, Color.FromArgb(r, g, b));
+                }
+            }
+            pictureBox1.Image = ee;
+        }
+
+        #endregion
     }
 }
