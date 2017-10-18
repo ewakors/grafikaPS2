@@ -414,6 +414,11 @@ namespace grafikaPS2
             Subtraction subtration = new Subtraction(this);
             subtration.ShowDialog();
         }
+        private void multiplicationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Multiplication multi = new Multiplication(this);
+            multi.ShowDialog();
+        }
         #endregion
 
         #region Filters

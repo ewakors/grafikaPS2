@@ -37,6 +37,8 @@
             this.grayscale1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grayscale2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.brightnessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.additionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.subtractionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.effectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.smoothingFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medianFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -63,11 +65,10 @@
             this.convertToCMYK = new System.Windows.Forms.Button();
             this.createRGBCube = new System.Windows.Forms.Button();
             this.clearImage = new System.Windows.Forms.Button();
-            this.additionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.showBackColor = new System.Windows.Forms.PictureBox();
             this.colorPicker = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.subtractionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.multiplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.greenValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueValue)).BeginInit();
@@ -128,7 +129,8 @@
             this.grayscale2ToolStripMenuItem,
             this.brightnessToolStripMenuItem,
             this.additionToolStripMenuItem,
-            this.subtractionToolStripMenuItem});
+            this.subtractionToolStripMenuItem,
+            this.multiplicationToolStripMenuItem});
             this.colorsToolStripMenuItem.Name = "colorsToolStripMenuItem";
             this.colorsToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.colorsToolStripMenuItem.Text = "Colors";
@@ -153,6 +155,20 @@
             this.brightnessToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.brightnessToolStripMenuItem.Text = "Brightness";
             this.brightnessToolStripMenuItem.Click += new System.EventHandler(this.brightnessToolStripMenuItem_Click);
+            // 
+            // additionToolStripMenuItem
+            // 
+            this.additionToolStripMenuItem.Name = "additionToolStripMenuItem";
+            this.additionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.additionToolStripMenuItem.Text = "Addition";
+            this.additionToolStripMenuItem.Click += new System.EventHandler(this.additionToolStripMenuItem_Click);
+            // 
+            // subtractionToolStripMenuItem
+            // 
+            this.subtractionToolStripMenuItem.Name = "subtractionToolStripMenuItem";
+            this.subtractionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.subtractionToolStripMenuItem.Text = "Subtraction";
+            this.subtractionToolStripMenuItem.Click += new System.EventHandler(this.subtractionToolStripMenuItem_Click);
             // 
             // effectsToolStripMenuItem
             // 
@@ -377,13 +393,6 @@
             this.clearImage.UseVisualStyleBackColor = true;
             this.clearImage.Click += new System.EventHandler(this.clearImage_Click);
             // 
-            // additionToolStripMenuItem
-            // 
-            this.additionToolStripMenuItem.Name = "additionToolStripMenuItem";
-            this.additionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.additionToolStripMenuItem.Text = "Addition";
-            this.additionToolStripMenuItem.Click += new System.EventHandler(this.additionToolStripMenuItem_Click);
-            // 
             // showBackColor
             // 
             this.showBackColor.Location = new System.Drawing.Point(752, 218);
@@ -413,12 +422,12 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             // 
-            // subtractionToolStripMenuItem
+            // multiplicationToolStripMenuItem
             // 
-            this.subtractionToolStripMenuItem.Name = "subtractionToolStripMenuItem";
-            this.subtractionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.subtractionToolStripMenuItem.Text = "Subtraction";
-            this.subtractionToolStripMenuItem.Click += new System.EventHandler(this.subtractionToolStripMenuItem_Click);
+            this.multiplicationToolStripMenuItem.Name = "multiplicationToolStripMenuItem";
+            this.multiplicationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.multiplicationToolStripMenuItem.Text = "Multiplication";
+            this.multiplicationToolStripMenuItem.Click += new System.EventHandler(this.multiplicationToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -505,6 +514,7 @@
         private System.Windows.Forms.Button clearImage;
         private System.Windows.Forms.ToolStripMenuItem additionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem subtractionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem multiplicationToolStripMenuItem;
     }
 }
 
