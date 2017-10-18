@@ -409,6 +409,11 @@ namespace grafikaPS2
             Addition addition = new Addition(this);
             addition.ShowDialog();
         }
+        private void subtractionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Subtraction subtration = new Subtraction(this);
+            subtration.ShowDialog();
+        }
         #endregion
 
         #region Filters
@@ -455,8 +460,6 @@ namespace grafikaPS2
         {
            
         }
-
-      
 
         private void highpassToolStripMenuItem_Click(object sender, EventArgs e)
         {

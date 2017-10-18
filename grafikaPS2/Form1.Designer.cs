@@ -45,14 +45,11 @@
             this.gaussianBlurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.colorPicker = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.greenValue = new System.Windows.Forms.NumericUpDown();
             this.blueValue = new System.Windows.Forms.NumericUpDown();
             this.RedLabel = new System.Windows.Forms.Label();
             this.GreenLabel = new System.Windows.Forms.Label();
             this.BlueLabel = new System.Windows.Forms.Label();
-            this.showBackColor = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -67,13 +64,17 @@
             this.createRGBCube = new System.Windows.Forms.Button();
             this.clearImage = new System.Windows.Forms.Button();
             this.additionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.showBackColor = new System.Windows.Forms.PictureBox();
+            this.colorPicker = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.subtractionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.colorPicker)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.greenValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueValue)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.showBackColor)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.redValue)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showBackColor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colorPicker)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -126,7 +127,8 @@
             this.grayscale1ToolStripMenuItem,
             this.grayscale2ToolStripMenuItem,
             this.brightnessToolStripMenuItem,
-            this.additionToolStripMenuItem});
+            this.additionToolStripMenuItem,
+            this.subtractionToolStripMenuItem});
             this.colorsToolStripMenuItem.Name = "colorsToolStripMenuItem";
             this.colorsToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.colorsToolStripMenuItem.Text = "Colors";
@@ -207,27 +209,6 @@
             // 
             this.saveFileDialog.Filter = "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg";
             // 
-            // colorPicker
-            // 
-            this.colorPicker.Image = global::grafikaPS2.Properties.Resources.color_wheel_260x2601;
-            this.colorPicker.Location = new System.Drawing.Point(752, 47);
-            this.colorPicker.Name = "colorPicker";
-            this.colorPicker.Size = new System.Drawing.Size(167, 163);
-            this.colorPicker.TabIndex = 1;
-            this.colorPicker.TabStop = false;
-            this.colorPicker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.colorPicker_MouseDown);
-            this.colorPicker.MouseMove += new System.Windows.Forms.MouseEventHandler(this.colorPicker_MouseMove);
-            this.colorPicker.MouseUp += new System.Windows.Forms.MouseEventHandler(this.colorPicker_MouseUp);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Location = new System.Drawing.Point(12, 47);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(734, 439);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
-            // 
             // greenValue
             // 
             this.greenValue.Location = new System.Drawing.Point(859, 242);
@@ -278,14 +259,6 @@
             this.BlueLabel.Size = new System.Drawing.Size(31, 13);
             this.BlueLabel.TabIndex = 7;
             this.BlueLabel.Text = "Blue:";
-            // 
-            // showBackColor
-            // 
-            this.showBackColor.Location = new System.Drawing.Point(752, 218);
-            this.showBackColor.Name = "showBackColor";
-            this.showBackColor.Size = new System.Drawing.Size(54, 66);
-            this.showBackColor.TabIndex = 8;
-            this.showBackColor.TabStop = false;
             // 
             // label1
             // 
@@ -411,6 +384,42 @@
             this.additionToolStripMenuItem.Text = "Addition";
             this.additionToolStripMenuItem.Click += new System.EventHandler(this.additionToolStripMenuItem_Click);
             // 
+            // showBackColor
+            // 
+            this.showBackColor.Location = new System.Drawing.Point(752, 218);
+            this.showBackColor.Name = "showBackColor";
+            this.showBackColor.Size = new System.Drawing.Size(54, 66);
+            this.showBackColor.TabIndex = 8;
+            this.showBackColor.TabStop = false;
+            // 
+            // colorPicker
+            // 
+            this.colorPicker.Image = global::grafikaPS2.Properties.Resources.color_wheel_260x2601;
+            this.colorPicker.Location = new System.Drawing.Point(752, 47);
+            this.colorPicker.Name = "colorPicker";
+            this.colorPicker.Size = new System.Drawing.Size(167, 163);
+            this.colorPicker.TabIndex = 1;
+            this.colorPicker.TabStop = false;
+            this.colorPicker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.colorPicker_MouseDown);
+            this.colorPicker.MouseMove += new System.Windows.Forms.MouseEventHandler(this.colorPicker_MouseMove);
+            this.colorPicker.MouseUp += new System.Windows.Forms.MouseEventHandler(this.colorPicker_MouseUp);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(12, 47);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(734, 439);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            // 
+            // subtractionToolStripMenuItem
+            // 
+            this.subtractionToolStripMenuItem.Name = "subtractionToolStripMenuItem";
+            this.subtractionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.subtractionToolStripMenuItem.Text = "Subtraction";
+            this.subtractionToolStripMenuItem.Click += new System.EventHandler(this.subtractionToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,12 +452,12 @@
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.colorPicker)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.greenValue)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueValue)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.showBackColor)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.redValue)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showBackColor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.colorPicker)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -495,6 +504,7 @@
         private System.Windows.Forms.ToolStripMenuItem brightnessToolStripMenuItem;
         private System.Windows.Forms.Button clearImage;
         private System.Windows.Forms.ToolStripMenuItem additionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem subtractionToolStripMenuItem;
     }
 }
 
