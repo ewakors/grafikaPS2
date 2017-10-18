@@ -344,21 +344,11 @@ namespace grafikaPS2
             blackValue.Text = k.ToString();
         }
 
+        #region Colors
+
+        #endregion
+
         #region Filters
-
-       
-
-        private void smoothingFilterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LinearFiltr(smoothingFilter);
-            LinearFiltr(smoothingFilter);
-        }
-
-        private void medianFilterToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            MedianaFilter();
-            MedianaFilter();
-        }
 
         int smoothingFilterSize = 3;
         int gaussFilterSize = 3;
@@ -366,7 +356,6 @@ namespace grafikaPS2
         int[,] red, green, blue, gray;
         private int Norm;
         private Filters currentFilter;
-
 
         int[] smoothingFilter = {1, 1, 1,
                                  1, 1, 1,
@@ -380,6 +369,24 @@ namespace grafikaPS2
         int[] gaussFilter = {1, 2, 1,
                              2, 4, 2,
                              1, 2, 1};
+
+        private void smoothingFilterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LinearFiltr(smoothingFilter);
+            LinearFiltr(smoothingFilter);
+        }
+
+        private void medianFilterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MedianaFilter();
+            MedianaFilter();
+        }
+
+        private void gaussianBlurToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LinearFiltr(gaussFilter);
+            LinearFiltr(gaussFilter);
+        }
 
         private void highpassToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -38,6 +38,7 @@
             this.smoothingFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medianFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.highpassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.colorPicker = new System.Windows.Forms.PictureBox();
@@ -60,7 +61,7 @@
             this.convert = new System.Windows.Forms.Button();
             this.convertToCMYK = new System.Windows.Forms.Button();
             this.createRGBCube = new System.Windows.Forms.Button();
-            this.highpassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gaussianBlurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.colorPicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -126,7 +127,8 @@
             this.smoothingFilterToolStripMenuItem,
             this.medianFilterToolStripMenuItem,
             this.sobelToolStripMenuItem,
-            this.highpassToolStripMenuItem});
+            this.highpassToolStripMenuItem,
+            this.gaussianBlurToolStripMenuItem});
             this.effectsToolStripMenuItem.Name = "effectsToolStripMenuItem";
             this.effectsToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.effectsToolStripMenuItem.Text = "Filters";
@@ -151,6 +153,13 @@
             this.sobelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.sobelToolStripMenuItem.Text = "Sobel";
             this.sobelToolStripMenuItem.Click += new System.EventHandler(this.sobelToolStripMenuItem_Click);
+            // 
+            // highpassToolStripMenuItem
+            // 
+            this.highpassToolStripMenuItem.Name = "highpassToolStripMenuItem";
+            this.highpassToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.highpassToolStripMenuItem.Text = "High-pass";
+            this.highpassToolStripMenuItem.Click += new System.EventHandler(this.highpassToolStripMenuItem_Click);
             // 
             // openFileDialog
             // 
@@ -347,12 +356,12 @@
             this.createRGBCube.UseVisualStyleBackColor = true;
             this.createRGBCube.Click += new System.EventHandler(this.createRGBCube_Click);
             // 
-            // highpassToolStripMenuItem
+            // gaussianBlurToolStripMenuItem
             // 
-            this.highpassToolStripMenuItem.Name = "highpassToolStripMenuItem";
-            this.highpassToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.highpassToolStripMenuItem.Text = "High-pass";
-            this.highpassToolStripMenuItem.Click += new System.EventHandler(this.highpassToolStripMenuItem_Click);
+            this.gaussianBlurToolStripMenuItem.Name = "gaussianBlurToolStripMenuItem";
+            this.gaussianBlurToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.gaussianBlurToolStripMenuItem.Text = "Gaussian blur";
+            this.gaussianBlurToolStripMenuItem.Click += new System.EventHandler(this.gaussianBlurToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -431,6 +440,7 @@
         private System.Windows.Forms.ToolStripMenuItem medianFilterToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sobelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem highpassToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem gaussianBlurToolStripMenuItem;
     }
 }
 
