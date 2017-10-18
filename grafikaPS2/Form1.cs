@@ -346,9 +346,7 @@ namespace grafikaPS2
 
         #region Filters
 
-        int smoothingFilterSize = 3;
-        private int Size = 3;
-        int[,] red, green, blue, gray;
+       
 
         private void smoothingFilterToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -356,6 +354,15 @@ namespace grafikaPS2
             LinearFiltr(smoothingFilter);
         }
 
+        private void medianFilterToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MedianaFilter();
+            MedianaFilter();
+        }
+
+        int smoothingFilterSize = 3;
+        private int Size = 3;
+        int[,] red, green, blue, gray;
         private int Norm;
         private Filters currentFilter;
 
@@ -368,7 +375,7 @@ namespace grafikaPS2
                        2, 4, 2,
                        1, 2, 1};
 
-        enum Filters { Smoothing, Medianowy, Sobel, Gurnoprzepustowywyostrzajacy, Gauss, SplotMaski }
+        enum Filters { Smoothing, Median, Sobel, Gurnoprzepustowywyostrzajacy, Gauss, SplotMaski }
 
         private void SetFilter(Filters f)
         {
@@ -394,6 +401,49 @@ namespace grafikaPS2
                     blue[i, j] = pixel.B;
                 }
             }
+        }
+        // obliczanie mediany
+        int partition(int[] c, int a, int b)
+        {
+            int e, tmp;
+            a = a;
+            b = b;
+            e = c[a];        //elemennt dzielacy
+            while (a < b)
+            {
+                while ((a < b) && (c[b] >= e)) b--;
+                while ((a < b) && (c[a] < e)) a++;
+                if (a < b)
+                {
+                    tmp = c[a];
+                    c[a] = c[b];
+                    c[b] = tmp;
+                }
+            }
+            return a;
+        }
+
+        //obliczanie mediany
+        int mediana(int[] c, int size)
+        {
+            //algorytm Hoare'a
+            int i = 0;
+            int j = size - 1;
+            int w = j / 2;
+            int k;
+            while (i != j)
+            {
+                k = partition(c, i, j);
+                k = k - i + 1;
+                if (k >= w)
+                    j = i + k - 1;
+                if (k < w)
+                {
+                    w -= k;
+                    i += k;
+                }
+            }
+            return c[i];
         }
 
         private void LinearFiltr(int[] Filter)
@@ -445,6 +495,51 @@ namespace grafikaPS2
                     Color pixel = ee.GetPixel(i, j);
                     int a, r, g, b;
 
+                    r = pixel.R;
+                    g = pixel.G;
+                    b = pixel.B;
+
+                    ee.SetPixel(i, j, Color.FromArgb(r, g, b));
+                }
+            }
+            pictureBox1.Image = ee;
+        }
+
+        private void MedianaFilter()
+        {
+            var ee = color_bmp;
+
+            setRGBG();
+
+            int m;
+            int[] rval = new int[9], gval = new int[9], bval = new int[9], grayval = new int[9];
+            Size = 3;
+            int margin = ((Size - 1) / 2);
+
+            //filtr dla obrazu kolorowego
+            for (int i = margin; i < ee.Width; i++)
+                for (int j = margin; j < ee.Height; j++)
+                {
+                    m = 0;
+                    for (int k = 0; k < Size; k++)
+                        for (int l = 0; l < Size; l++)
+                        {
+                            rval[m] = red[i + k - margin, j + l - margin];
+                            gval[m] = green[i + k - margin, j + l - margin];
+                            bval[m] = blue[i + k - margin, j + l - margin];
+                            m++;
+                        }
+                    ee.SetPixel(i, j, Color.FromArgb(mediana(rval, 9) + (mediana(gval, 9) << 8) + (mediana(bval, 9) << 16)));
+                }
+            color_bmp = ee;
+
+            for (var i = 0; i < ee.Width; i++)
+            {
+                for (var j = 0; j < ee.Height; j++)
+                {
+                    Color pixel = ee.GetPixel(i, j);
+                    int a, r, g, b;
+             
                     r = pixel.R;
                     g = pixel.G;
                     b = pixel.B;

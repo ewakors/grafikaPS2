@@ -58,6 +58,7 @@
             this.colorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.effectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.smoothingFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.medianFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.colorPicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -315,7 +316,8 @@
             // effectsToolStripMenuItem
             // 
             this.effectsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.smoothingFilterToolStripMenuItem});
+            this.smoothingFilterToolStripMenuItem,
+            this.medianFilterToolStripMenuItem});
             this.effectsToolStripMenuItem.Name = "effectsToolStripMenuItem";
             this.effectsToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
             this.effectsToolStripMenuItem.Text = "Filters";
@@ -323,9 +325,16 @@
             // smoothingFilterToolStripMenuItem
             // 
             this.smoothingFilterToolStripMenuItem.Name = "smoothingFilterToolStripMenuItem";
-            this.smoothingFilterToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.smoothingFilterToolStripMenuItem.Text = "Smoothing filter";
+            this.smoothingFilterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.smoothingFilterToolStripMenuItem.Text = "Smoothing";
             this.smoothingFilterToolStripMenuItem.Click += new System.EventHandler(this.smoothingFilterToolStripMenuItem_Click);
+            // 
+            // medianFilterToolStripMenuItem
+            // 
+            this.medianFilterToolStripMenuItem.Name = "medianFilterToolStripMenuItem";
+            this.medianFilterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.medianFilterToolStripMenuItem.Text = "Median";
+            this.medianFilterToolStripMenuItem.Click += new System.EventHandler(this.medianFilterToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -401,6 +410,7 @@
         private System.Windows.Forms.ToolStripMenuItem colorsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem effectsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem smoothingFilterToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem medianFilterToolStripMenuItem;
     }
 }
 
