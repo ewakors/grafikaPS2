@@ -46,7 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Addition.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Addition.Designer.cs">
+      <DependentUpon>Addition.cs</DependentUpon>
+    </Compile>
     <Compile Include="Anymap.cs" />
+    <Compile Include="Brightness.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Brightness.Designer.cs">
+      <DependentUpon>Brightness.cs</DependentUpon>
+    </Compile>
     <Compile Include="ClosableTabControl.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -61,6 +73,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Addition.resx">
+      <DependentUpon>Addition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Brightness.resx">
+      <DependentUpon>Brightness.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

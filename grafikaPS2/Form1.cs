@@ -12,8 +12,9 @@ namespace grafikaPS2
         private Image image;
         private int r = 0, g = 0, b = 0, c = 0, m = 0, y = 0, k = 100;
         bool ChooseState = false;
-        private Bitmap color_bmp;
+        public Bitmap color_bmp;
         Color pointColor;
+        public PictureBox pictureBox { get; set; }
 
         public Form1(string path)
             : this()
@@ -24,6 +25,7 @@ namespace grafikaPS2
         public Form1()
         {
             InitializeComponent();
+            pictureBox = pictureBox1;
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -343,12 +345,19 @@ namespace grafikaPS2
             yellowValue.Text = y.ToString();
             blackValue.Text = k.ToString();
         }
+        public void DrawUpdater()
+        {
+            pictureBox1.Invalidate();
+        }
 
+        public void DrawUpdater(bool force_redraw)
+        {
+            pictureBox1.Invalidate();
+        }
         #region Colors
         private void grayscale1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var ee = color_bmp;
-
 
             for (var i = 0; i < ee.Width; i++)
             {
@@ -387,6 +396,18 @@ namespace grafikaPS2
                 }
             }
             pictureBox1.Image = ee;
+        }
+
+        private void brightnessToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Brightness brightness = new Brightness(this);
+            brightness.ShowDialog();
+
+        }
+        private void additionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Addition addition = new Addition(this);
+            addition.ShowDialog();
         }
         #endregion
 
@@ -428,7 +449,14 @@ namespace grafikaPS2
         {
             LinearFiltr(gaussFilter);
             LinearFiltr(gaussFilter);
-        }      
+        }
+
+        private void clearImage_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+      
 
         private void highpassToolStripMenuItem_Click(object sender, EventArgs e)
         {

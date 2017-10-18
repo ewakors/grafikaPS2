@@ -34,11 +34,15 @@
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grayscale1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grayscale2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.brightnessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.effectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.smoothingFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medianFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sobelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.highpassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.gaussianBlurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.colorPicker = new System.Windows.Forms.PictureBox();
@@ -61,10 +65,8 @@
             this.convert = new System.Windows.Forms.Button();
             this.convertToCMYK = new System.Windows.Forms.Button();
             this.createRGBCube = new System.Windows.Forms.Button();
-            this.gaussianBlurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.grayscale1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.grayscale2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.brightnessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearImage = new System.Windows.Forms.Button();
+            this.additionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.colorPicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -123,10 +125,32 @@
             this.colorsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.grayscale1ToolStripMenuItem,
             this.grayscale2ToolStripMenuItem,
-            this.brightnessToolStripMenuItem});
+            this.brightnessToolStripMenuItem,
+            this.additionToolStripMenuItem});
             this.colorsToolStripMenuItem.Name = "colorsToolStripMenuItem";
             this.colorsToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.colorsToolStripMenuItem.Text = "Colors";
+            // 
+            // grayscale1ToolStripMenuItem
+            // 
+            this.grayscale1ToolStripMenuItem.Name = "grayscale1ToolStripMenuItem";
+            this.grayscale1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.grayscale1ToolStripMenuItem.Text = "Grayscale1";
+            this.grayscale1ToolStripMenuItem.Click += new System.EventHandler(this.grayscale1ToolStripMenuItem_Click);
+            // 
+            // grayscale2ToolStripMenuItem
+            // 
+            this.grayscale2ToolStripMenuItem.Name = "grayscale2ToolStripMenuItem";
+            this.grayscale2ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.grayscale2ToolStripMenuItem.Text = "Grayscale2";
+            this.grayscale2ToolStripMenuItem.Click += new System.EventHandler(this.grayscale2ToolStripMenuItem_Click);
+            // 
+            // brightnessToolStripMenuItem
+            // 
+            this.brightnessToolStripMenuItem.Name = "brightnessToolStripMenuItem";
+            this.brightnessToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.brightnessToolStripMenuItem.Text = "Brightness";
+            this.brightnessToolStripMenuItem.Click += new System.EventHandler(this.brightnessToolStripMenuItem_Click);
             // 
             // effectsToolStripMenuItem
             // 
@@ -143,30 +167,37 @@
             // smoothingFilterToolStripMenuItem
             // 
             this.smoothingFilterToolStripMenuItem.Name = "smoothingFilterToolStripMenuItem";
-            this.smoothingFilterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.smoothingFilterToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.smoothingFilterToolStripMenuItem.Text = "Smoothing";
             this.smoothingFilterToolStripMenuItem.Click += new System.EventHandler(this.smoothingFilterToolStripMenuItem_Click);
             // 
             // medianFilterToolStripMenuItem
             // 
             this.medianFilterToolStripMenuItem.Name = "medianFilterToolStripMenuItem";
-            this.medianFilterToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.medianFilterToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.medianFilterToolStripMenuItem.Text = "Median";
             this.medianFilterToolStripMenuItem.Click += new System.EventHandler(this.medianFilterToolStripMenuItem_Click);
             // 
             // sobelToolStripMenuItem
             // 
             this.sobelToolStripMenuItem.Name = "sobelToolStripMenuItem";
-            this.sobelToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.sobelToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.sobelToolStripMenuItem.Text = "Sobel";
             this.sobelToolStripMenuItem.Click += new System.EventHandler(this.sobelToolStripMenuItem_Click);
             // 
             // highpassToolStripMenuItem
             // 
             this.highpassToolStripMenuItem.Name = "highpassToolStripMenuItem";
-            this.highpassToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.highpassToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.highpassToolStripMenuItem.Text = "High-pass";
             this.highpassToolStripMenuItem.Click += new System.EventHandler(this.highpassToolStripMenuItem_Click);
+            // 
+            // gaussianBlurToolStripMenuItem
+            // 
+            this.gaussianBlurToolStripMenuItem.Name = "gaussianBlurToolStripMenuItem";
+            this.gaussianBlurToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.gaussianBlurToolStripMenuItem.Text = "Gaussian blur";
+            this.gaussianBlurToolStripMenuItem.Click += new System.EventHandler(this.gaussianBlurToolStripMenuItem_Click);
             // 
             // openFileDialog
             // 
@@ -363,38 +394,29 @@
             this.createRGBCube.UseVisualStyleBackColor = true;
             this.createRGBCube.Click += new System.EventHandler(this.createRGBCube_Click);
             // 
-            // gaussianBlurToolStripMenuItem
+            // clearImage
             // 
-            this.gaussianBlurToolStripMenuItem.Name = "gaussianBlurToolStripMenuItem";
-            this.gaussianBlurToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.gaussianBlurToolStripMenuItem.Text = "Gaussian blur";
-            this.gaussianBlurToolStripMenuItem.Click += new System.EventHandler(this.gaussianBlurToolStripMenuItem_Click);
+            this.clearImage.Location = new System.Drawing.Point(871, 464);
+            this.clearImage.Name = "clearImage";
+            this.clearImage.Size = new System.Drawing.Size(60, 23);
+            this.clearImage.TabIndex = 26;
+            this.clearImage.Text = "Clear";
+            this.clearImage.UseVisualStyleBackColor = true;
+            this.clearImage.Click += new System.EventHandler(this.clearImage_Click);
             // 
-            // grayscale1ToolStripMenuItem
+            // additionToolStripMenuItem
             // 
-            this.grayscale1ToolStripMenuItem.Name = "grayscale1ToolStripMenuItem";
-            this.grayscale1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.grayscale1ToolStripMenuItem.Text = "Grayscale1";
-            this.grayscale1ToolStripMenuItem.Click += new System.EventHandler(this.grayscale1ToolStripMenuItem_Click);
-            // 
-            // grayscale2ToolStripMenuItem
-            // 
-            this.grayscale2ToolStripMenuItem.Name = "grayscale2ToolStripMenuItem";
-            this.grayscale2ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.grayscale2ToolStripMenuItem.Text = "Grayscale2";
-            this.grayscale2ToolStripMenuItem.Click += new System.EventHandler(this.grayscale2ToolStripMenuItem_Click);
-            // 
-            // brightnessToolStripMenuItem
-            // 
-            this.brightnessToolStripMenuItem.Name = "brightnessToolStripMenuItem";
-            this.brightnessToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.brightnessToolStripMenuItem.Text = "Brightness";
+            this.additionToolStripMenuItem.Name = "additionToolStripMenuItem";
+            this.additionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.additionToolStripMenuItem.Text = "Addition";
+            this.additionToolStripMenuItem.Click += new System.EventHandler(this.additionToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(931, 499);
+            this.Controls.Add(this.clearImage);
             this.Controls.Add(this.createRGBCube);
             this.Controls.Add(this.convertToCMYK);
             this.Controls.Add(this.convert);
@@ -471,6 +493,8 @@
         private System.Windows.Forms.ToolStripMenuItem grayscale1ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem grayscale2ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem brightnessToolStripMenuItem;
+        private System.Windows.Forms.Button clearImage;
+        private System.Windows.Forms.ToolStripMenuItem additionToolStripMenuItem;
     }
 }
 
