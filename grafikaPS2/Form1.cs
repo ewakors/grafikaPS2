@@ -345,7 +345,49 @@ namespace grafikaPS2
         }
 
         #region Colors
+        private void grayscale1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var ee = color_bmp;
 
+
+            for (var i = 0; i < ee.Width; i++)
+            {
+                for (var j = 0; j < ee.Height; j++)
+                {
+                    Color pixel = ee.GetPixel(i, j);
+                    int r, g, b;
+
+                    r = pixel.R;
+                    g = pixel.G;
+                    b = pixel.B;
+                    r = (int)(0.21 * r + 0.71 * g + 0.07 * b);
+
+                    ee.SetPixel(i, j, Color.FromArgb(r, r, r));
+                }
+            }
+            pictureBox1.Image = ee;
+        }
+        private void grayscale2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var ee = color_bmp;
+
+            for (var i = 0; i < ee.Width; i++)
+            {
+                for (var j = 0; j < ee.Height; j++)
+                {
+                    Color pixel = ee.GetPixel(i, j);
+                    int r, g, b;
+
+                    r = pixel.R;
+                    g = pixel.G;
+                    b = pixel.B;
+                    int k = (int)(0.299 * r + 0.587 * g + 0.114 * b);
+
+                    ee.SetPixel(i, j, Color.FromArgb(k, k, k));
+                }
+            }
+            pictureBox1.Image = ee;
+        }
         #endregion
 
         #region Filters
@@ -386,7 +428,7 @@ namespace grafikaPS2
         {
             LinearFiltr(gaussFilter);
             LinearFiltr(gaussFilter);
-        }
+        }      
 
         private void highpassToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -62,6 +62,9 @@
             this.convertToCMYK = new System.Windows.Forms.Button();
             this.createRGBCube = new System.Windows.Forms.Button();
             this.gaussianBlurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grayscale1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grayscale2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.brightnessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.colorPicker)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -117,6 +120,10 @@
             // 
             // colorsToolStripMenuItem
             // 
+            this.colorsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.grayscale1ToolStripMenuItem,
+            this.grayscale2ToolStripMenuItem,
+            this.brightnessToolStripMenuItem});
             this.colorsToolStripMenuItem.Name = "colorsToolStripMenuItem";
             this.colorsToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.colorsToolStripMenuItem.Text = "Colors";
@@ -363,6 +370,26 @@
             this.gaussianBlurToolStripMenuItem.Text = "Gaussian blur";
             this.gaussianBlurToolStripMenuItem.Click += new System.EventHandler(this.gaussianBlurToolStripMenuItem_Click);
             // 
+            // grayscale1ToolStripMenuItem
+            // 
+            this.grayscale1ToolStripMenuItem.Name = "grayscale1ToolStripMenuItem";
+            this.grayscale1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.grayscale1ToolStripMenuItem.Text = "Grayscale1";
+            this.grayscale1ToolStripMenuItem.Click += new System.EventHandler(this.grayscale1ToolStripMenuItem_Click);
+            // 
+            // grayscale2ToolStripMenuItem
+            // 
+            this.grayscale2ToolStripMenuItem.Name = "grayscale2ToolStripMenuItem";
+            this.grayscale2ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.grayscale2ToolStripMenuItem.Text = "Grayscale2";
+            this.grayscale2ToolStripMenuItem.Click += new System.EventHandler(this.grayscale2ToolStripMenuItem_Click);
+            // 
+            // brightnessToolStripMenuItem
+            // 
+            this.brightnessToolStripMenuItem.Name = "brightnessToolStripMenuItem";
+            this.brightnessToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.brightnessToolStripMenuItem.Text = "Brightness";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -441,6 +468,9 @@
         private System.Windows.Forms.ToolStripMenuItem sobelToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem highpassToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem gaussianBlurToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem grayscale1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem grayscale2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem brightnessToolStripMenuItem;
     }
 }
 
