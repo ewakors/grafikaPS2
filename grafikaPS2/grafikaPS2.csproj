@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,26 +47,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Addition.cs">
+    <Compile Include="Colors\Addition.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Addition.Designer.cs">
+    <Compile Include="Colors\Addition.Designer.cs">
       <DependentUpon>Addition.cs</DependentUpon>
     </Compile>
     <Compile Include="Anymap.cs" />
-    <Compile Include="Brightness.cs">
+    <Compile Include="Colors\Brightness.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Brightness.Designer.cs">
+    <Compile Include="Colors\Brightness.Designer.cs">
       <DependentUpon>Brightness.cs</DependentUpon>
     </Compile>
-    <Compile Include="ClosableTabControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Division.cs">
+    <Compile Include="Histogram\Equalization.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Division.Designer.cs">
+    <Compile Include="Histogram\Equalization.Designer.cs">
+      <DependentUpon>Equalization.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Histogram\Stretching.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Histogram\Stretching.Designer.cs">
+      <DependentUpon>Stretching.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tab\ClosableTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Colors\Division.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Colors\Division.Designer.cs">
       <DependentUpon>Division.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -74,37 +87,40 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Multiplication.cs">
+    <Compile Include="Colors\Multiplication.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Multiplication.Designer.cs">
+    <Compile Include="Colors\Multiplication.Designer.cs">
       <DependentUpon>Multiplication.cs</DependentUpon>
     </Compile>
-    <Compile Include="PictureTabPage.cs">
+    <Compile Include="Tab\PictureTabPage.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Subtraction.cs">
+    <Compile Include="Colors\Subtraction.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Subtraction.Designer.cs">
+    <Compile Include="Colors\Subtraction.Designer.cs">
       <DependentUpon>Subtraction.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Addition.resx">
+    <EmbeddedResource Include="Colors\Addition.resx">
       <DependentUpon>Addition.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Brightness.resx">
+    <EmbeddedResource Include="Colors\Brightness.resx">
       <DependentUpon>Brightness.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Division.resx">
+    <EmbeddedResource Include="Colors\Division.resx">
       <DependentUpon>Division.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Multiplication.resx">
+    <EmbeddedResource Include="Colors\Multiplication.resx">
       <DependentUpon>Multiplication.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Histogram\Equalization.resx">
+      <DependentUpon>Equalization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -116,7 +132,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Subtraction.resx">
+    <EmbeddedResource Include="Colors\Subtraction.resx">
       <DependentUpon>Subtraction.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
