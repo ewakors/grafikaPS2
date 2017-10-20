@@ -104,6 +104,15 @@
     <Compile Include="Colors\Subtraction.Designer.cs">
       <DependentUpon>Subtraction.cs</DependentUpon>
     </Compile>
+    <Compile Include="Binarization\Value.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Binarization\Value.Designer.cs">
+      <DependentUpon>Value.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Binarization\Value.resx">
+      <DependentUpon>Value.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Colors\Addition.resx">
       <DependentUpon>Addition.cs</DependentUpon>
     </EmbeddedResource>

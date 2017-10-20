@@ -9,7 +9,6 @@ namespace grafikaPS2
 {
     public partial class Form1 : Form
     {
-        private Image image;
         private int r = 0, g = 0, b = 0, c = 0, m = 0, y = 0, k = 100;
         bool ChooseState = false;
         public Bitmap color_bmp;
@@ -671,6 +670,11 @@ namespace grafikaPS2
         #endregion
 
         #region Binarization
+        private void valueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Value value = new Value(this);
+            value.ShowDialog();
+        }
         #endregion
     }
 }

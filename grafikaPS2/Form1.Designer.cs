@@ -33,6 +33,9 @@
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grayscale1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.grayscale2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,6 +50,10 @@
             this.sobelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.highpassToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gaussianBlurToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.histogramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stretchingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.equalizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.binarizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.greenValue = new System.Windows.Forms.NumericUpDown();
@@ -70,13 +77,7 @@
             this.showBackColor = new System.Windows.Forms.PictureBox();
             this.colorPicker = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.histogramToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stretchingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.equalizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.binarizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.valueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.greenValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueValue)).BeginInit();
@@ -132,6 +133,27 @@
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.undoToolStripMenuItem,
+            this.redoToolStripMenuItem});
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // undoToolStripMenuItem
+            // 
+            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.undoToolStripMenuItem.Text = "Undo";
+            // 
+            // redoToolStripMenuItem
+            // 
+            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.redoToolStripMenuItem.Text = "Redo";
             // 
             // colorsToolStripMenuItem
             // 
@@ -242,6 +264,37 @@
             this.gaussianBlurToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.gaussianBlurToolStripMenuItem.Text = "Gaussian blur";
             this.gaussianBlurToolStripMenuItem.Click += new System.EventHandler(this.gaussianBlurToolStripMenuItem_Click);
+            // 
+            // histogramToolStripMenuItem
+            // 
+            this.histogramToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.stretchingToolStripMenuItem,
+            this.equalizationToolStripMenuItem});
+            this.histogramToolStripMenuItem.Name = "histogramToolStripMenuItem";
+            this.histogramToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
+            this.histogramToolStripMenuItem.Text = "Histogram";
+            // 
+            // stretchingToolStripMenuItem
+            // 
+            this.stretchingToolStripMenuItem.Name = "stretchingToolStripMenuItem";
+            this.stretchingToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.stretchingToolStripMenuItem.Text = "Stretching";
+            this.stretchingToolStripMenuItem.Click += new System.EventHandler(this.stretchingToolStripMenuItem_Click);
+            // 
+            // equalizationToolStripMenuItem
+            // 
+            this.equalizationToolStripMenuItem.Name = "equalizationToolStripMenuItem";
+            this.equalizationToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.equalizationToolStripMenuItem.Text = "Equalization";
+            this.equalizationToolStripMenuItem.Click += new System.EventHandler(this.equalizationToolStripMenuItem_Click);
+            // 
+            // binarizationToolStripMenuItem
+            // 
+            this.binarizationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.valueToolStripMenuItem});
+            this.binarizationToolStripMenuItem.Name = "binarizationToolStripMenuItem";
+            this.binarizationToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.binarizationToolStripMenuItem.Text = "Binarization";
             // 
             // openFileDialog
             // 
@@ -448,55 +501,12 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             // 
-            // editToolStripMenuItem
+            // valueToolStripMenuItem
             // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.undoToolStripMenuItem,
-            this.redoToolStripMenuItem});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // undoToolStripMenuItem
-            // 
-            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.undoToolStripMenuItem.Text = "Undo";
-            // 
-            // redoToolStripMenuItem
-            // 
-            this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.redoToolStripMenuItem.Text = "Redo";
-            // 
-            // histogramToolStripMenuItem
-            // 
-            this.histogramToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.stretchingToolStripMenuItem,
-            this.equalizationToolStripMenuItem});
-            this.histogramToolStripMenuItem.Name = "histogramToolStripMenuItem";
-            this.histogramToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.histogramToolStripMenuItem.Text = "Histogram";
-            // 
-            // stretchingToolStripMenuItem
-            // 
-            this.stretchingToolStripMenuItem.Name = "stretchingToolStripMenuItem";
-            this.stretchingToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.stretchingToolStripMenuItem.Text = "Stretching";
-            this.stretchingToolStripMenuItem.Click += new System.EventHandler(this.stretchingToolStripMenuItem_Click);
-            // 
-            // equalizationToolStripMenuItem
-            // 
-            this.equalizationToolStripMenuItem.Name = "equalizationToolStripMenuItem";
-            this.equalizationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.equalizationToolStripMenuItem.Text = "Equalization";
-            this.equalizationToolStripMenuItem.Click += new System.EventHandler(this.equalizationToolStripMenuItem_Click);
-            // 
-            // binarizationToolStripMenuItem
-            // 
-            this.binarizationToolStripMenuItem.Name = "binarizationToolStripMenuItem";
-            this.binarizationToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.binarizationToolStripMenuItem.Text = "Binarization";
+            this.valueToolStripMenuItem.Name = "valueToolStripMenuItem";
+            this.valueToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.valueToolStripMenuItem.Text = "Value";
+            this.valueToolStripMenuItem.Click += new System.EventHandler(this.valueToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -592,6 +602,7 @@
         private System.Windows.Forms.ToolStripMenuItem stretchingToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem equalizationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem binarizationToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem valueToolStripMenuItem;
     }
 }
 
