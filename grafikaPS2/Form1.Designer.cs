@@ -40,6 +40,7 @@
             this.additionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.subtractionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.multiplicationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.divisionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.effectsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.smoothingFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.medianFilterToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -69,7 +70,6 @@
             this.showBackColor = new System.Windows.Forms.PictureBox();
             this.colorPicker = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.divisionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.greenValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueValue)).BeginInit();
@@ -140,44 +140,51 @@
             // grayscale1ToolStripMenuItem
             // 
             this.grayscale1ToolStripMenuItem.Name = "grayscale1ToolStripMenuItem";
-            this.grayscale1ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.grayscale1ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.grayscale1ToolStripMenuItem.Text = "Grayscale1";
             this.grayscale1ToolStripMenuItem.Click += new System.EventHandler(this.grayscale1ToolStripMenuItem_Click);
             // 
             // grayscale2ToolStripMenuItem
             // 
             this.grayscale2ToolStripMenuItem.Name = "grayscale2ToolStripMenuItem";
-            this.grayscale2ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.grayscale2ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.grayscale2ToolStripMenuItem.Text = "Grayscale2";
             this.grayscale2ToolStripMenuItem.Click += new System.EventHandler(this.grayscale2ToolStripMenuItem_Click);
             // 
             // brightnessToolStripMenuItem
             // 
             this.brightnessToolStripMenuItem.Name = "brightnessToolStripMenuItem";
-            this.brightnessToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.brightnessToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.brightnessToolStripMenuItem.Text = "Brightness";
             this.brightnessToolStripMenuItem.Click += new System.EventHandler(this.brightnessToolStripMenuItem_Click);
             // 
             // additionToolStripMenuItem
             // 
             this.additionToolStripMenuItem.Name = "additionToolStripMenuItem";
-            this.additionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.additionToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.additionToolStripMenuItem.Text = "Addition";
             this.additionToolStripMenuItem.Click += new System.EventHandler(this.additionToolStripMenuItem_Click);
             // 
             // subtractionToolStripMenuItem
             // 
             this.subtractionToolStripMenuItem.Name = "subtractionToolStripMenuItem";
-            this.subtractionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.subtractionToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.subtractionToolStripMenuItem.Text = "Subtraction";
             this.subtractionToolStripMenuItem.Click += new System.EventHandler(this.subtractionToolStripMenuItem_Click);
             // 
             // multiplicationToolStripMenuItem
             // 
             this.multiplicationToolStripMenuItem.Name = "multiplicationToolStripMenuItem";
-            this.multiplicationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.multiplicationToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
             this.multiplicationToolStripMenuItem.Text = "Multiplication";
             this.multiplicationToolStripMenuItem.Click += new System.EventHandler(this.multiplicationToolStripMenuItem_Click);
+            // 
+            // divisionToolStripMenuItem
+            // 
+            this.divisionToolStripMenuItem.Name = "divisionToolStripMenuItem";
+            this.divisionToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.divisionToolStripMenuItem.Text = "Division";
+            this.divisionToolStripMenuItem.Click += new System.EventHandler(this.divisionToolStripMenuItem_Click);
             // 
             // effectsToolStripMenuItem
             // 
@@ -430,13 +437,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
-            // 
-            // divisionToolStripMenuItem
-            // 
-            this.divisionToolStripMenuItem.Name = "divisionToolStripMenuItem";
-            this.divisionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.divisionToolStripMenuItem.Text = "Division";
-            this.divisionToolStripMenuItem.Click += new System.EventHandler(this.divisionToolStripMenuItem_Click);
             // 
             // Form1
             // 

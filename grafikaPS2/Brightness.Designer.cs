@@ -34,13 +34,15 @@
             // 
             // trackBarBrightness
             // 
-            this.trackBarBrightness.LargeChange = 1;
+            this.trackBarBrightness.LargeChange = 100;
             this.trackBarBrightness.Location = new System.Drawing.Point(12, 38);
             this.trackBarBrightness.Maximum = 255;
             this.trackBarBrightness.Minimum = -255;
             this.trackBarBrightness.Name = "trackBarBrightness";
             this.trackBarBrightness.Size = new System.Drawing.Size(408, 45);
+            this.trackBarBrightness.SmallChange = 5;
             this.trackBarBrightness.TabIndex = 16;
+            this.trackBarBrightness.TickFrequency = 5;
             this.trackBarBrightness.Scroll += new System.EventHandler(this.trackBarBrightness_Scroll);
             // 
             // Brightness
@@ -51,7 +53,6 @@
             this.Controls.Add(this.trackBarBrightness);
             this.Name = "Brightness";
             this.Text = "Brightness";
-            this.Load += new System.EventHandler(this.Brightness_Load);
             ((System.ComponentModel.ISupportInitialize)(this.trackBarBrightness)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

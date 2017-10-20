@@ -14,7 +14,7 @@ namespace grafikaPS2
         bool ChooseState = false;
         public Bitmap color_bmp;
         Color pointColor;
-        public PictureBox pictureBox { get; set; }
+        public PictureBox pictureBox;
 
         public Form1(string path)
             : this()
@@ -345,15 +345,7 @@ namespace grafikaPS2
             yellowValue.Text = y.ToString();
             blackValue.Text = k.ToString();
         }
-        public void DrawUpdater()
-        {
-            pictureBox1.Invalidate();
-        }
 
-        public void DrawUpdater(bool force_redraw)
-        {
-            pictureBox1.Invalidate();
-        }
         #region Colors
         private void grayscale1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
