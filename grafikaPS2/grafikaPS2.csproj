@@ -122,6 +122,9 @@
     <EmbeddedResource Include="Histogram\Equalization.resx">
       <DependentUpon>Equalization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Histogram\Stretching.resx">
+      <DependentUpon>Stretching.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

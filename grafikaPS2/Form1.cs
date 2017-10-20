@@ -15,7 +15,6 @@ namespace grafikaPS2
         public Bitmap color_bmp;
         Color pointColor;
         public PictureBox pictureBox;
-        Equalization equal;
 
         public Form1(string path)
             : this()
@@ -25,13 +24,6 @@ namespace grafikaPS2
 
         public Form1()
         {
-            InitializeComponent();
-            pictureBox = pictureBox1;
-        }
-
-        public Form1(Equalization e)
-        {
-            equal = e;
             InitializeComponent();
             pictureBox = pictureBox1;
         }
@@ -667,9 +659,9 @@ namespace grafikaPS2
         #region Histogram
         private void stretchingToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Stretching stretching = new Stretching(this);
+            stretching.ShowDialog();
         }
-
 
         private void equalizationToolStripMenuItem_Click(object sender, EventArgs e)
         {

@@ -20,7 +20,8 @@ namespace grafikaPS2
         {
             InitializeComponent();
             parent = p;
-            EqualizationHistogram();
+            HistogramEqualization();
+            HistogramEqualization();
         }
 
         double[] UpdateLUTEqualization(double[] D, double[] LUT, int series)
@@ -38,7 +39,7 @@ namespace grafikaPS2
             return LUT;
         }
         
-        void EqualizationHistogram()
+        void HistogramEqualization()
         {
             var ee = parent.color_bmp;
             int i, j, rvalue, gvalue, bvalue, grayvalue;
