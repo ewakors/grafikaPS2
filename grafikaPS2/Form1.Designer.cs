@@ -54,6 +54,7 @@
             this.stretchingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.equalizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.binarizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.valueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.greenValue = new System.Windows.Forms.NumericUpDown();
@@ -77,7 +78,7 @@
             this.showBackColor = new System.Windows.Forms.PictureBox();
             this.colorPicker = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.valueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.percentBlackSelectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.greenValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueValue)).BeginInit();
@@ -291,10 +292,18 @@
             // binarizationToolStripMenuItem
             // 
             this.binarizationToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.valueToolStripMenuItem});
+            this.valueToolStripMenuItem,
+            this.percentBlackSelectionToolStripMenuItem});
             this.binarizationToolStripMenuItem.Name = "binarizationToolStripMenuItem";
-            this.binarizationToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.binarizationToolStripMenuItem.Text = "Binarization";
+            this.binarizationToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
+            this.binarizationToolStripMenuItem.Text = "Thresholding";
+            // 
+            // valueToolStripMenuItem
+            // 
+            this.valueToolStripMenuItem.Name = "valueToolStripMenuItem";
+            this.valueToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.valueToolStripMenuItem.Text = "Value";
+            this.valueToolStripMenuItem.Click += new System.EventHandler(this.valueToolStripMenuItem_Click);
             // 
             // openFileDialog
             // 
@@ -501,12 +510,12 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
             // 
-            // valueToolStripMenuItem
+            // percentBlackSelectionToolStripMenuItem
             // 
-            this.valueToolStripMenuItem.Name = "valueToolStripMenuItem";
-            this.valueToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.valueToolStripMenuItem.Text = "Value";
-            this.valueToolStripMenuItem.Click += new System.EventHandler(this.valueToolStripMenuItem_Click);
+            this.percentBlackSelectionToolStripMenuItem.Name = "percentBlackSelectionToolStripMenuItem";
+            this.percentBlackSelectionToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.percentBlackSelectionToolStripMenuItem.Text = "Percent Black Selection";
+            this.percentBlackSelectionToolStripMenuItem.Click += new System.EventHandler(this.percentBlackSelectionToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -603,6 +612,7 @@
         private System.Windows.Forms.ToolStripMenuItem equalizationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem binarizationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem valueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem percentBlackSelectionToolStripMenuItem;
     }
 }
 

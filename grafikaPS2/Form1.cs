@@ -669,11 +669,17 @@ namespace grafikaPS2
         }
         #endregion
 
-        #region Binarization
+        #region Thresholding
         private void valueToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Value value = new Value(this);
             value.ShowDialog();
+        }
+
+        private void percentBlackSelectionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Binarization.PercentBlackSelection percent = new Binarization.PercentBlackSelection(this);
+            percent.ShowDialog();
         }
         #endregion
     }

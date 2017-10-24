@@ -45,13 +45,18 @@ namespace grafikaPS2
 
         private void okButton_Click(object sender, EventArgs e)
         {
-            int[] zmienna = imageValueHistogram(parent.color_bmp);
             Bitmap ee = parent.color_bmp;
             for (var i = 0; i < ee.Width; i++)
             {
                 for (var j = 0; j < ee.Height; j++)
                 {
                     int prog = int.Parse(valueTextBox.Text);
+
+                    if (prog > 255 || prog <0)
+                    {
+                        MessageBox.Show("Invalide value");
+                    }
+
                     Color pixel = ee.GetPixel(i, j);
                     int r, g, b;
 
