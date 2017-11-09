@@ -40,23 +40,22 @@ namespace grafikaPS2
             }
 
             return histogram;
-
         }
 
         private void okButton_Click(object sender, EventArgs e)
         {
             Bitmap ee = parent.color_bmp;
+            double prog = double.Parse(valueTextBox.Text);
+
+            if (prog > 255 || prog < 0)
+            {
+                MessageBox.Show("Invalide value");
+            }
+
             for (var i = 0; i < ee.Width; i++)
             {
                 for (var j = 0; j < ee.Height; j++)
                 {
-                    int prog = int.Parse(valueTextBox.Text);
-
-                    if (prog > 255 || prog <0)
-                    {
-                        MessageBox.Show("Invalide value");
-                    }
-
                     Color pixel = ee.GetPixel(i, j);
                     int r, g, b;
 
@@ -70,7 +69,6 @@ namespace grafikaPS2
                     }
 
                     ee.SetPixel(i, j, Color.FromArgb(r, g, b));
-
                 }
             }
             parent.color_bmp = ee;

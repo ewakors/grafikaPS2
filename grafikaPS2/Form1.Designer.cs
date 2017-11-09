@@ -55,6 +55,7 @@
             this.equalizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.binarizationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.valueToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.percentBlackSelectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.greenValue = new System.Windows.Forms.NumericUpDown();
@@ -78,7 +79,7 @@
             this.showBackColor = new System.Windows.Forms.PictureBox();
             this.colorPicker = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.percentBlackSelectionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.bezierCurve = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.greenValue)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.blueValue)).BeginInit();
@@ -99,7 +100,7 @@
             this.binarizationToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(931, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(966, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -305,6 +306,13 @@
             this.valueToolStripMenuItem.Text = "Value";
             this.valueToolStripMenuItem.Click += new System.EventHandler(this.valueToolStripMenuItem_Click);
             // 
+            // percentBlackSelectionToolStripMenuItem
+            // 
+            this.percentBlackSelectionToolStripMenuItem.Name = "percentBlackSelectionToolStripMenuItem";
+            this.percentBlackSelectionToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.percentBlackSelectionToolStripMenuItem.Text = "Percent Black Selection";
+            this.percentBlackSelectionToolStripMenuItem.Click += new System.EventHandler(this.percentBlackSelectionToolStripMenuItem_Click);
+            // 
             // openFileDialog
             // 
             this.openFileDialog.FileName = "openFileDialog";
@@ -315,7 +323,7 @@
             // 
             // greenValue
             // 
-            this.greenValue.Location = new System.Drawing.Point(859, 242);
+            this.greenValue.Location = new System.Drawing.Point(900, 241);
             this.greenValue.Maximum = new decimal(new int[] {
             255,
             0,
@@ -327,7 +335,7 @@
             // 
             // blueValue
             // 
-            this.blueValue.Location = new System.Drawing.Point(859, 269);
+            this.blueValue.Location = new System.Drawing.Point(900, 268);
             this.blueValue.Maximum = new decimal(new int[] {
             255,
             0,
@@ -340,7 +348,7 @@
             // RedLabel
             // 
             this.RedLabel.AutoSize = true;
-            this.RedLabel.Location = new System.Drawing.Point(814, 218);
+            this.RedLabel.Location = new System.Drawing.Point(855, 217);
             this.RedLabel.Name = "RedLabel";
             this.RedLabel.Size = new System.Drawing.Size(30, 13);
             this.RedLabel.TabIndex = 5;
@@ -349,7 +357,7 @@
             // GreenLabel
             // 
             this.GreenLabel.AutoSize = true;
-            this.GreenLabel.Location = new System.Drawing.Point(814, 244);
+            this.GreenLabel.Location = new System.Drawing.Point(855, 243);
             this.GreenLabel.Name = "GreenLabel";
             this.GreenLabel.Size = new System.Drawing.Size(39, 13);
             this.GreenLabel.TabIndex = 6;
@@ -358,7 +366,7 @@
             // BlueLabel
             // 
             this.BlueLabel.AutoSize = true;
-            this.BlueLabel.Location = new System.Drawing.Point(814, 271);
+            this.BlueLabel.Location = new System.Drawing.Point(855, 270);
             this.BlueLabel.Name = "BlueLabel";
             this.BlueLabel.Size = new System.Drawing.Size(31, 13);
             this.BlueLabel.TabIndex = 7;
@@ -404,33 +412,33 @@
             // 
             this.cyanValue.Location = new System.Drawing.Point(817, 300);
             this.cyanValue.Name = "cyanValue";
-            this.cyanValue.Size = new System.Drawing.Size(48, 20);
+            this.cyanValue.Size = new System.Drawing.Size(36, 20);
             this.cyanValue.TabIndex = 18;
             // 
             // magentaValue
             // 
             this.magentaValue.Location = new System.Drawing.Point(817, 327);
             this.magentaValue.Name = "magentaValue";
-            this.magentaValue.Size = new System.Drawing.Size(48, 20);
+            this.magentaValue.Size = new System.Drawing.Size(36, 20);
             this.magentaValue.TabIndex = 19;
             // 
             // yellowValue
             // 
             this.yellowValue.Location = new System.Drawing.Point(817, 353);
             this.yellowValue.Name = "yellowValue";
-            this.yellowValue.Size = new System.Drawing.Size(48, 20);
+            this.yellowValue.Size = new System.Drawing.Size(36, 20);
             this.yellowValue.TabIndex = 20;
             // 
             // blackValue
             // 
             this.blackValue.Location = new System.Drawing.Point(817, 379);
             this.blackValue.Name = "blackValue";
-            this.blackValue.Size = new System.Drawing.Size(48, 20);
+            this.blackValue.Size = new System.Drawing.Size(36, 20);
             this.blackValue.TabIndex = 21;
             // 
             // redValue
             // 
-            this.redValue.Location = new System.Drawing.Point(859, 216);
+            this.redValue.Location = new System.Drawing.Point(900, 215);
             this.redValue.Maximum = new decimal(new int[] {
             255,
             0,
@@ -443,9 +451,9 @@
             // 
             // convert
             // 
-            this.convert.Location = new System.Drawing.Point(758, 405);
+            this.convert.Location = new System.Drawing.Point(859, 300);
             this.convert.Name = "convert";
-            this.convert.Size = new System.Drawing.Size(107, 23);
+            this.convert.Size = new System.Drawing.Size(101, 23);
             this.convert.TabIndex = 23;
             this.convert.Text = "Convert to RGB";
             this.convert.UseVisualStyleBackColor = true;
@@ -453,9 +461,9 @@
             // 
             // convertToCMYK
             // 
-            this.convertToCMYK.Location = new System.Drawing.Point(758, 434);
+            this.convertToCMYK.Location = new System.Drawing.Point(859, 325);
             this.convertToCMYK.Name = "convertToCMYK";
-            this.convertToCMYK.Size = new System.Drawing.Size(107, 23);
+            this.convertToCMYK.Size = new System.Drawing.Size(101, 23);
             this.convertToCMYK.TabIndex = 24;
             this.convertToCMYK.Text = "Convert to CMYK";
             this.convertToCMYK.UseVisualStyleBackColor = true;
@@ -463,9 +471,9 @@
             // 
             // createRGBCube
             // 
-            this.createRGBCube.Location = new System.Drawing.Point(758, 463);
+            this.createRGBCube.Location = new System.Drawing.Point(859, 351);
             this.createRGBCube.Name = "createRGBCube";
-            this.createRGBCube.Size = new System.Drawing.Size(107, 23);
+            this.createRGBCube.Size = new System.Drawing.Size(101, 23);
             this.createRGBCube.TabIndex = 25;
             this.createRGBCube.Text = "Create RGB-Cube";
             this.createRGBCube.UseVisualStyleBackColor = true;
@@ -473,9 +481,9 @@
             // 
             // clearImage
             // 
-            this.clearImage.Location = new System.Drawing.Point(871, 464);
+            this.clearImage.Location = new System.Drawing.Point(859, 376);
             this.clearImage.Name = "clearImage";
-            this.clearImage.Size = new System.Drawing.Size(60, 23);
+            this.clearImage.Size = new System.Drawing.Size(101, 23);
             this.clearImage.TabIndex = 26;
             this.clearImage.Text = "Clear";
             this.clearImage.UseVisualStyleBackColor = true;
@@ -485,16 +493,16 @@
             // 
             this.showBackColor.Location = new System.Drawing.Point(752, 218);
             this.showBackColor.Name = "showBackColor";
-            this.showBackColor.Size = new System.Drawing.Size(54, 66);
+            this.showBackColor.Size = new System.Drawing.Size(89, 66);
             this.showBackColor.TabIndex = 8;
             this.showBackColor.TabStop = false;
             // 
             // colorPicker
             // 
             this.colorPicker.Image = global::grafikaPS2.Properties.Resources.color_wheel_260x2601;
-            this.colorPicker.Location = new System.Drawing.Point(752, 47);
+            this.colorPicker.Location = new System.Drawing.Point(777, 49);
             this.colorPicker.Name = "colorPicker";
-            this.colorPicker.Size = new System.Drawing.Size(167, 163);
+            this.colorPicker.Size = new System.Drawing.Size(164, 163);
             this.colorPicker.TabIndex = 1;
             this.colorPicker.TabStop = false;
             this.colorPicker.MouseDown += new System.Windows.Forms.MouseEventHandler(this.colorPicker_MouseDown);
@@ -508,20 +516,28 @@
             this.pictureBox1.Size = new System.Drawing.Size(734, 439);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             this.pictureBox1.MouseEnter += new System.EventHandler(this.pictureBox1_MouseEnter);
+            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
-            // percentBlackSelectionToolStripMenuItem
+            // bezierCurve
             // 
-            this.percentBlackSelectionToolStripMenuItem.Name = "percentBlackSelectionToolStripMenuItem";
-            this.percentBlackSelectionToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
-            this.percentBlackSelectionToolStripMenuItem.Text = "Percent Black Selection";
-            this.percentBlackSelectionToolStripMenuItem.Click += new System.EventHandler(this.percentBlackSelectionToolStripMenuItem_Click);
+            this.bezierCurve.Location = new System.Drawing.Point(858, 424);
+            this.bezierCurve.Name = "bezierCurve";
+            this.bezierCurve.Size = new System.Drawing.Size(75, 23);
+            this.bezierCurve.TabIndex = 27;
+            this.bezierCurve.Text = "Bezier curve";
+            this.bezierCurve.UseVisualStyleBackColor = true;
+            this.bezierCurve.Click += new System.EventHandler(this.bezierCurve_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 499);
+            this.ClientSize = new System.Drawing.Size(966, 499);
+            this.Controls.Add(this.bezierCurve);
             this.Controls.Add(this.clearImage);
             this.Controls.Add(this.createRGBCube);
             this.Controls.Add(this.convertToCMYK);
@@ -547,6 +563,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.greenValue)).EndInit();
@@ -613,6 +630,7 @@
         private System.Windows.Forms.ToolStripMenuItem binarizationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem valueToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem percentBlackSelectionToolStripMenuItem;
+        private System.Windows.Forms.Button bezierCurve;
     }
 }
 

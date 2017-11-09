@@ -47,6 +47,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BezierClass.cs" />
+    <Compile Include="Binarization\Entropy.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Binarization\Entropy.Designer.cs">
+      <DependentUpon>Entropy.cs</DependentUpon>
+    </Compile>
     <Compile Include="Binarization\PercentBlackSelection.cs">
       <SubType>Form</SubType>
     </Compile>

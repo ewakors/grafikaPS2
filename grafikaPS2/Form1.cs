@@ -10,6 +10,7 @@ namespace grafikaPS2
     public partial class Form1 : Form
     {
         private int r = 0, g = 0, b = 0, c = 0, m = 0, y = 0, k = 100;
+        private BezierLine bezier;
         bool ChooseState = false;
         public Bitmap color_bmp;
         Color pointColor;
@@ -26,6 +27,13 @@ namespace grafikaPS2
             InitializeComponent();
             pictureBox = pictureBox1;
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            bezier = new BezierLine(pictureBox1);
+            //bezier.Spawn(40, 40);
+        }
+     
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -505,6 +513,7 @@ namespace grafikaPS2
                 }
             }
         }
+
         // obliczanie mediany
         int partition(int[] c, int a, int b)
         {
@@ -681,6 +690,35 @@ namespace grafikaPS2
             Binarization.PercentBlackSelection percent = new Binarization.PercentBlackSelection(this);
             percent.ShowDialog();
         }
+        #endregion
+
+        #region Bezier curve
+        private void bezierCurve_Click(object sender, EventArgs e)
+        {
+            bezier = new BezierLine(pictureBox1);
+            bezier.Spawn(40, 40);
+        }
+
+        private void pictureBox1_Paint(object sender, PaintEventArgs e)
+        {
+            bezier.Draw(e);
+        }
+
+        private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
+        {
+            bezier.MouseDown(e);
+        }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            bezier.MouseMove(e);
+        }
+
+        private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
+        {
+            bezier.MouseUp(e);
+        }
+
         #endregion
     }
 }
